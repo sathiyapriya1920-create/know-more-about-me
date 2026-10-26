@@ -68,7 +68,7 @@ export const experience = [
         id: 'automation',
         title: 'Office Automation',
         highlights: [
-          'Built and improved internal automation workflows to reduce repetitive manual work.',
+          'Built and improved internal automation workflows — including server handling and theme update/maintenance bots using Hermes and LLM automation — to reduce repetitive manual work.',
           'Focused on consistency and easier day-to-day process management.',
         ],
       },

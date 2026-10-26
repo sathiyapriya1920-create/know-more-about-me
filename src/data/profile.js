@@ -23,7 +23,7 @@ export const profile = {
   github: 'https://github.com/sathiyapriyac-coder',
   linkedin: 'https://www.linkedin.com/in/sathiya-priya-c-4a59a8444/',
   // Set to a filename in /public/documents/ once you add a real résumé PDF
-  resumeFilename: null, // e.g. 'resume.pdf'
+  resumeFilename: 'Sathiya_Priya_C_Resume.pdf', // e.g. 'resume.pdf'
 
   // --- Hero ---
   headline: 'WordPress Developer building and maintaining production themes, plugins, and tools',
@@ -68,7 +68,7 @@ export const profile = {
     approach:
       'I focus on practical problem-solving: diagnosing production issues, writing maintainable PHP and JavaScript, designing reusable WordPress components, and balancing feature work with the ongoing reliability of live products.',
     growth:
-      'WordPress development is my core professional strength. Building this portfolio and the SEO Agent in React reflects intentional growth into modern frontend architecture and component-driven interfaces.',
+      'WordPress development is my core professional strength. Full product ownership of Cookieshift (server through client support), React tooling such as the SEO Agent, and LLM-assisted server automation with Hermes reflect intentional growth beyond theme maintenance alone.',
   },
 
   // --- Philosophy ---

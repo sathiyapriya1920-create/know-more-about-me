@@ -1,8 +1,8 @@
 import { useState, useCallback, useMemo } from 'react'
 import { projects, projectFilters } from '../../data/projects'
 import { SectionHeading } from '../ui/SectionHeading'
-import { ProjectCard } from '../projects/ProjectCard'
 import { ProjectModal } from '../projects/ProjectModal'
+import { Badge } from '../ui/Badge'
 import { useReveal } from '../../hooks/useReveal'
 import styles from './Projects.module.css'
 
@@ -28,17 +28,13 @@ export function Projects() {
       <div className="container">
         <div ref={ref} className="reveal">
           <SectionHeading
-            label="Featured work"
-            title="Projects & case studies"
+            label="Work timeline"
+            title="Projects & products"
             id="projects-title"
-            description="Product plugins, theme maintenance at scale, Elementor systems, SEO tooling, and automation — selected work from ZozoThemes and related development."
+            description="A timeline of product work — from theme catalog maintenance to published plugins, full product ownership, React tooling, and LLM-assisted automation."
           />
 
-          <div
-            className={styles.filters}
-            role="group"
-            aria-label="Filter projects by category"
-          >
+          <div className={styles.filters} role="group" aria-label="Filter projects">
             {projectFilters.map((f) => (
               <button
                 key={f.id}
@@ -52,17 +48,53 @@ export function Projects() {
             ))}
           </div>
 
-          <div className={styles.grid}>
+          <ol className={styles.timeline}>
             {filtered.map((project, i) => (
-              <div
-                key={project.id}
-                className={styles.cardWrap}
-                style={{ animationDelay: `${i * 50}ms` }}
-              >
-                <ProjectCard project={project} onSelect={handleSelect} />
-              </div>
+              <li key={project.id} className={styles.item} style={{ '--i': i }}>
+                <div className={styles.rail} aria-hidden="true">
+                  <span className={styles.railDot} />
+                  <span className={styles.railLine} />
+                </div>
+                <article className={styles.card}>
+                  <div className={styles.meta}>
+                    <time className={styles.year}>{project.year}</time>
+                    <Badge variant="accent">{project.category}</Badge>
+                    {project.featured && <Badge variant="violet">Featured</Badge>}
+                    {project.status && <span className={styles.status}>{project.status}</span>}
+                  </div>
+                  <h3 className={styles.title}>{project.title}</h3>
+                  <p className={styles.tagline}>{project.tagline}</p>
+                  <p className={styles.overview}>
+                    {project.overview.length > 180
+                      ? `${project.overview.slice(0, 180)}…`
+                      : project.overview}
+                  </p>
+                  <ul className={styles.highlights}>
+                    {project.highlights.slice(0, 4).map((h) => (
+                      <li key={h}>{h}</li>
+                    ))}
+                  </ul>
+                  <div className={styles.footer}>
+                    <div className={styles.stack}>
+                      {project.stack.slice(0, 5).map((t) => (
+                        <span key={t} className={styles.tech}>{t}</span>
+                      ))}
+                    </div>
+                    <div className={styles.actions}>
+                      {project.liveUrl && (
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className={styles.liveLink}>
+                          Visit
+                        </a>
+                      )}
+                      <button type="button" className={styles.detailBtn} onClick={() => handleSelect(project)}>
+                        Case study →
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </li>
             ))}
-          </div>
+          </ol>
 
           {filtered.length === 0 && (
             <p className={styles.empty}>No projects in this category yet.</p>
@@ -70,9 +102,7 @@ export function Projects() {
         </div>
       </div>
 
-      {selected && (
-        <ProjectModal project={selected} onClose={handleClose} />
-      )}
+      {selected && <ProjectModal project={selected} onClose={handleClose} />}
     </section>
   )
 }
