@@ -1,0 +1,91 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+}
+
+.filterBtn {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    color var(--duration-fast),
+    background var(--duration-fast),
+    border-color var(--duration-fast);
+}
+
+.filterBtn:hover {
+  color: var(--color-text);
+  border-color: var(--color-border);
+  background: var(--color-bg-hover);
+}
+
+.filterBtn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.filterActive {
+  color: var(--color-accent-text);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.filterActive:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  color: var(--color-accent-text);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cardWrap {
+  opacity: 0;
+  animation: cardIn 0.45s var(--ease-out) forwards;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardWrap {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+.empty {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  padding: var(--space-8) 0;
+}

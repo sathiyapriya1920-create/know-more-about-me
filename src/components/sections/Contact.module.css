@@ -1,0 +1,31 @@
+.wrap {
+  max-width: 36rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.links {
+  display: flex;
+  gap: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.link {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.link:hover {
+  color: var(--color-accent);
+}
+
+.emailDisplay {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+}
