@@ -30,7 +30,6 @@ export const experience = [
         title: 'WordPress Plugin Development',
         highlights: [
           'Built and maintained plugins including Zozo Portfolio and Zozo Nest.',
-          'Worked on Schema Booster and related structured-data development (details configurable).',
           'Developed custom Elementor addons, widgets, and reusable WordPress functionality.',
           'Implemented custom post types, plugin settings, hooks/filters, metadata, and AJAX where required.',
           'Supported WooCommerce customizations as part of product and client needs.',
@@ -71,8 +70,6 @@ export const experience = [
         highlights: [
           'Built and improved internal automation workflows to reduce repetitive manual work.',
           'Focused on consistency and easier day-to-day process management.',
-          // Replace when confirmed:
-          'Specific systems and tooling: [EDIT — describe the workflows and tools you automated].',
         ],
       },
       {

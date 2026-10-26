@@ -23,7 +23,7 @@ All editable content lives under `src/data/`:
 | File | Purpose |
 |------|---------|
 | `profile.js` | Name, contact, LinkedIn/GitHub, headline, metrics, about, philosophy, résumé flag |
-| `projects.js` | Project cards, case studies, live URLs, stack, editable placeholders |
+| `projects.js` | Project cards, case studies, live URLs, stack, screenshots |
 | `experience.js` | ZozoThemes role, dates, expandable responsibility groups |
 | `skills.js` | Skill categories and items |
 
@@ -31,15 +31,30 @@ All editable content lives under `src/data/`:
 
 Set `resumeFilename` in `profile.js` to a PDF name (e.g. `'resume.pdf'`) and place the file in `public/documents/`. Until then, the download button stays hidden.
 
-### Placeholders still marked [EDIT …]
+### Project screenshots
 
-- Cookieshift: exact personal contribution, stack, outcomes
-- SEO Agent: feature list and outcomes
-- Schema Booster: public URL and contribution details
-- Office automation: tools, workflows, outcomes
-- Zozo Nest: finer contribution details
+Cards and case studies support an optional screenshot. Save a 16:9 image (about 1200×675) in `public/images/` and set it on the project:
 
-Update those strings in `src/data/projects.js` (and experience automation notes) when you have confirmed facts. Do not invent metrics.
+```js
+image: '/images/zozo-portfolio.png',
+```
+
+Projects without an image simply render without one.
+
+### Missing details never show
+
+Any project field set to `null` (or an empty `stack: []`) is hidden automatically, so the site never shows placeholder text. Fill fields in only when you have confirmed facts — do not invent metrics.
+
+`draftProjects` at the bottom of `src/data/projects.js` holds work that is parked (currently **Schema Booster**, until it has a public URL and confirmed contribution). Move an entry into `projects` when it is ready.
+
+### Before you apply — checklist
+
+- [ ] Add your résumé PDF to `public/documents/` and set `resumeFilename` in `profile.js` (the button appears automatically)
+- [ ] Add a screenshot for each featured project
+- [ ] Cookieshift: add your exact contribution, stack and outcome (`projects.js`)
+- [ ] SEO Agent: add the confirmed feature list and outcome
+- [ ] Check every project year matches your real involvement
+- [ ] Add a professional photo or avatar if you want one (optional)
 
 ## Project structure
 
@@ -60,7 +75,7 @@ src/
 
 - Dark charcoal theme with teal/cyan accents
 - Staggered hero entrance + typing role rotation
-- Animated 140+ themes metric on scroll
+- Animated metrics on scroll (years of experience is calculated from your start date)
 - Interactive skill category tabs
 - Project category filters + accessible case-study modal
 - Expandable experience areas with timeline
@@ -73,7 +88,7 @@ src/
 
 1. Push this repo to GitHub.
 2. Import the project in Vercel (framework: Vite).
-3. After you have a live URL, set canonical / Open Graph URLs in `index.html`.
+3. `index.html` already has canonical / Open Graph URLs for `https://sathiya-digital-portfolio.vercel.app/`. If you change the domain, update those URLs and `public/og-image.png` (the link-preview image).
 
 ## Confirmed links
 

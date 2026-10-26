@@ -33,8 +33,8 @@ export class ErrorBoundary extends Component {
           <div>
             <h1 style={{ marginBottom: '1rem' }}>Something went wrong</h1>
             <p style={{ color: '#9aa3b5', marginBottom: '1.5rem' }}>
-              Please refresh the page. If the problem continues, check the
-              browser console.
+              Please reload the page. If the problem continues, try again in a
+              few minutes.
             </p>
             <button
               type="button"

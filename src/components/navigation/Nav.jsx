@@ -13,10 +13,12 @@ const NAV_LINKS = [
   { id: 'contact', label: 'Contact' },
 ]
 
+const NAV_IDS = NAV_LINKS.map((l) => l.id)
+
 export function Nav() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const activeId = useScrollSpy(NAV_LINKS.map((l) => l.id), 120)
+  const activeId = useScrollSpy(NAV_IDS, 120)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)

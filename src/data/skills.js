@@ -61,7 +61,6 @@ export const skillCategories = [
     description: 'Internal workflows that reduce repetitive operational work.',
     skills: [
       { name: 'Office Workflows', note: 'Process streamlining and consistency' },
-      { name: 'Internal Tooling', note: '[EDIT — specific tools when confirmed]' },
     ],
   },
   {

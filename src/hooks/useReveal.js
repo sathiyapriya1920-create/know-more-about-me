@@ -4,7 +4,9 @@ import { useEffect, useRef } from 'react'
  * Adds .is-visible when element enters the viewport.
  * Respects prefers-reduced-motion (CSS handles zero-duration).
  */
-export function useReveal(options = {}) {
+const DEFAULT_OPTIONS = {}
+
+export function useReveal(options = DEFAULT_OPTIONS) {
   const ref = useRef(null)
 
   useEffect(() => {

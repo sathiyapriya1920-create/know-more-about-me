@@ -49,8 +49,9 @@ export function Overview() {
             <div className={styles.pillar}>
               <h3>Product development</h3>
               <p>
-                Custom themes, plugins (Zozo Portfolio, Zozo Nest, Schema Booster),
-                Elementor addons, and React-based tools such as the SEO Agent.
+                Custom themes, plugins (Zozo Portfolio and Zozo Nest on
+                WordPress.org), Elementor addons, and React-based tools such as
+                the SEO Agent.
               </p>
             </div>
             <div className={styles.pillar}>

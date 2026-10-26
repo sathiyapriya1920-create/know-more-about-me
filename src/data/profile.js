@@ -1,9 +1,15 @@
 /**
  * ============================================================
  * EDIT THIS FILE to customize your personal information.
- * Confirmed values are set; only unconfirmed fields remain editable.
  * ============================================================
  */
+
+// Professional start date (month is 0-indexed: 8 = September)
+const CAREER_START = new Date(2023, 8, 1)
+const yearsExperience = Math.max(
+  1,
+  Math.floor((Date.now() - CAREER_START.getTime()) / (365.25 * 24 * 60 * 60 * 1000))
+)
 
 export const profile = {
   // --- Identity ---
@@ -28,31 +34,30 @@ export const profile = {
   roles: [
     'WordPress Developer',
     'Plugin Developer',
-    'Theme Maintenance Engineer',
-    'Elementor Specialist',
-    'Web Solutions Engineer',
+    'Elementor Developer',
   ],
 
-  // --- Overview metrics (only confirmed values) ---
+  // --- Overview metrics (keep these verifiable) ---
   metrics: [
+    {
+      value: yearsExperience,
+      suffix: '+',
+      label: 'Years of experience',
+      description: 'Professional WordPress development since September 2023',
+      animate: true,
+    },
     {
       value: 140,
       suffix: '+',
       label: 'Themes maintained',
-      description: 'Active maintenance, updates, and reliability across the ZozoThemes catalog',
+      description: 'Updates, bug fixes, and compatibility across the ZozoThemes catalog',
       animate: true,
     },
     {
-      value: 'Sep 2023',
-      label: 'Joined ZozoThemes',
-      description: 'WordPress development, plugins, Elementor, SEO, and client support',
-      animate: false,
-    },
-    {
-      value: 'Present',
-      label: 'Current role',
-      description: 'Themes, plugins, Elementor, SEO tooling, automation, and production support',
-      animate: false,
+      value: 2,
+      label: 'Plugins on WordPress.org',
+      description: 'Zozo Portfolio and Zozo Nest, published and publicly available',
+      animate: true,
     },
   ],
 
@@ -83,14 +88,6 @@ export const profile = {
     {
       title: 'Performance awareness',
       description: 'Every asset, query, and render path should justify its cost on real devices and networks.',
-    },
-    {
-      title: 'Practical problem-solving',
-      description: 'Ship reliable fixes and features that solve the actual problem, not the most impressive architecture on paper.',
-    },
-    {
-      title: 'Continuous learning',
-      description: 'Stay current with WordPress, modern JavaScript, and frontend patterns without abandoning production realities.',
     },
   ],
 }

@@ -3,6 +3,10 @@ import { Badge } from '../ui/Badge'
 import { Button } from '../ui/Button'
 import styles from './ProjectModal.module.css'
 
+/** Real content only: skips null/empty values and any leftover "[EDIT …]" text. */
+const hasContent = (value) =>
+  typeof value === 'string' && value.trim() !== '' && !value.includes('[EDIT')
+
 export function ProjectModal({ project, onClose }) {
   const dialogRef = useRef(null)
   const closeBtnRef = useRef(null)
@@ -15,12 +19,14 @@ export function ProjectModal({ project, onClose }) {
   )
 
   useEffect(() => {
+    const opener = document.activeElement
     document.addEventListener('keydown', handleKeyDown)
     document.body.style.overflow = 'hidden'
     closeBtnRef.current?.focus()
     return () => {
       document.removeEventListener('keydown', handleKeyDown)
       document.body.style.overflow = ''
+      if (opener && typeof opener.focus === 'function') opener.focus()
     }
   }, [handleKeyDown])
 
@@ -74,11 +80,19 @@ export function ProjectModal({ project, onClose }) {
         </div>
 
         <div className={styles.body}>
+          {project.image && (
+            <img
+              className={styles.cover}
+              src={project.image}
+              alt={`${project.title} screenshot`}
+              loading="lazy"
+              decoding="async"
+            />
+          )}
+
           {sections.map(
             (s) =>
-              s.content &&
-              s.content !== '—' &&
-              !s.content.startsWith('[EDIT') && (
+              hasContent(s.content) && (
                 <div key={s.key} className={styles.section}>
                   <h3>{s.label}</h3>
                   <p>{s.content}</p>
@@ -86,26 +100,27 @@ export function ProjectModal({ project, onClose }) {
               )
           )}
 
-          {project.highlights?.length > 0 &&
-            !project.highlights[0]?.startsWith('[EDIT') && (
-              <div className={styles.section}>
-                <h3>Highlights</h3>
-                <ul className={styles.list}>
-                  {project.highlights.map((h) => (
-                    <li key={h}>{h}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-          <div className={styles.section}>
-            <h3>Technology stack</h3>
-            <div className={styles.stack}>
-              {project.stack.map((t) => (
-                <Badge key={t}>{t}</Badge>
-              ))}
+          {project.highlights?.length > 0 && (
+            <div className={styles.section}>
+              <h3>Highlights</h3>
+              <ul className={styles.list}>
+                {project.highlights.map((h) => (
+                  <li key={h}>{h}</li>
+                ))}
+              </ul>
             </div>
-          </div>
+          )}
+
+          {project.stack?.length > 0 && (
+            <div className={styles.section}>
+              <h3>Technology stack</h3>
+              <div className={styles.stack}>
+                {project.stack.map((t) => (
+                  <Badge key={t}>{t}</Badge>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         <div className={styles.footer}>
@@ -118,12 +133,6 @@ export function ProjectModal({ project, onClose }) {
             <Button href={project.repoUrl} variant="secondary" external>
               Source code
             </Button>
-          )}
-          {!project.liveUrl && !project.repoUrl && (
-            <p className={styles.note}>
-              Links: add liveUrl / repoUrl in <code>src/data/projects.js</code>{' '}
-              when available.
-            </p>
           )}
           <Button variant="ghost" onClick={onClose}>
             Close

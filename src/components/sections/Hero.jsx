@@ -24,8 +24,11 @@ export function Hero() {
             {profile.fullName}
           </h1>
 
-          <p className={`${styles.title} ${styles.stagger3}`} aria-live="polite">
-            <span className={styles.roleText}>{typedRole}</span>
+          <p className={`${styles.title} ${styles.stagger3}`}>
+            <span className="sr-only">{profile.jobTitle}</span>
+            <span className={styles.roleText} aria-hidden="true">
+              {typedRole}
+            </span>
             <span className={styles.cursor} aria-hidden="true" />
           </p>
 

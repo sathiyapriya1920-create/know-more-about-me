@@ -1,11 +1,84 @@
 /**
  * ============================================================
  * EDIT THIS FILE to update projects and case studies.
- * Use placeholders only for details that are not confirmed.
+ *
+ * Rules of thumb:
+ *  - Any field set to null (or an empty array) is simply NOT shown,
+ *    so never type placeholder text like "TODO" into a live project.
+ *  - Add a screenshot: put the image in /public/images/ and set
+ *    image: '/images/my-project.png'  (recommended: 1200x675, 16:9).
+ *  - Only "featured" projects get the Featured badge — keep it to ~4.
  * ============================================================
  */
 
 export const projects = [
+  {
+    id: 'zozo-portfolio',
+    title: 'Zozo Portfolio',
+    tagline: 'Elementor portfolio plugin on WordPress.org',
+    featured: true,
+    category: 'WordPress',
+    categories: ['WordPress'],
+    year: '2025–Present',
+    status: 'Published on WordPress.org',
+    overview:
+      'A portfolio plugin for Elementor that builds grid, masonry and slider layouts with AJAX-filterable galleries. Built for the ZozoThemes ecosystem and published on WordPress.org.',
+    problem:
+      'Elementor users needed a lightweight, flexible way to present portfolio work with filtering and responsive layouts, without installing a large add-on suite.',
+    contribution:
+      'Created and maintained the plugin — custom post types, settings, display logic, and integration with theme and Elementor workflows.',
+    implementation:
+      'WordPress plugin architecture with custom post types, metadata, admin settings, Elementor widgets, and AJAX-powered filtering on the frontend.',
+    decisions:
+      'Kept the plugin focused on portfolio presentation and configuration rather than overloading it with unrelated features.',
+    challenges:
+      'Ensuring compatibility across multiple themes and Elementor setups while keeping the admin experience clear.',
+    outcome:
+      'Published on WordPress.org (v1.0, December 2025) with AJAX filtering, RTL language support, and custom fields for portfolio items.',
+    stack: ['PHP', 'WordPress', 'Elementor', 'JavaScript', 'CSS'],
+    liveUrl: 'https://wordpress.org/plugins/zozo-portfolio/',
+    repoUrl: null,
+    image: null,
+    highlights: [
+      'Published on WordPress.org',
+      'Grid, masonry and slider layouts',
+      'AJAX filtering, load more and infinite scroll',
+      'RTL language support',
+    ],
+  },
+  {
+    id: 'zozo-nest',
+    title: 'Zozo Nest',
+    tagline: 'Real-estate plugin on WordPress.org',
+    featured: true,
+    category: 'WordPress',
+    categories: ['WordPress'],
+    year: '2026',
+    status: 'Published on WordPress.org',
+    overview:
+      'A lightweight real-estate plugin for property listings, agent profiles, location-based search and Google Maps integration, built to work with Elementor. Published on WordPress.org.',
+    problem:
+      'Real-estate sites needed structured content types and display patterns beyond generic posts, without the weight of a large real-estate suite.',
+    contribution:
+      'Built and maintained plugin functionality for real-estate content modeling and frontend presentation.',
+    implementation:
+      'Custom post types for properties and agents, metadata, admin options, and Elementor-based frontend presentation.',
+    decisions:
+      'Structured data and admin UX around real-estate content needs rather than forcing a generic post type into an unsuitable shape.',
+    challenges:
+      'Balancing flexibility for different theme layouts with a coherent default experience.',
+    outcome: 'Published on WordPress.org (v1.0.0, July 2026).',
+    stack: ['PHP', 'WordPress', 'Elementor', 'JavaScript', 'CSS'],
+    liveUrl: 'https://wordpress.org/plugins/zozonest/',
+    repoUrl: null,
+    image: null,
+    highlights: [
+      'Published on WordPress.org',
+      'Property and agent listings',
+      'Search filters and Google Maps integration',
+      'JSON import/export for plugin settings',
+    ],
+  },
   {
     id: 'seo-agent',
     title: 'SEO Agent',
@@ -22,14 +95,13 @@ export const projects = [
     contribution:
       'Designed and implemented the application as a React project — UI architecture, component structure, and the workflows the tool supports.',
     implementation:
-      'Built with React and modern frontend practices. [EDIT — confirm exact feature set, integrations, and implementation details.]',
+      'Built with React and modern frontend practices, using a component-based structure.',
     decisions:
       'Prioritized a clear, developer-friendly interface and modular structure so features can be added without rewriting the core shell.',
     challenges:
       'Balancing useful automation with accuracy and transparency — the tool should assist without over-claiming capability.',
-    outcome:
-      '[EDIT — describe current status, adoption, or any confirmed outcome. Do not invent traffic or ranking metrics.]',
-    stack: ['React', 'JavaScript', 'Vite', 'CSS', 'SEO tooling concepts'],
+    outcome: null,
+    stack: ['React', 'JavaScript', 'Vite', 'CSS'],
     liveUrl: 'https://seo-agent.cookieshift.com/',
     repoUrl: null,
     image: null,
@@ -37,7 +109,6 @@ export const projects = [
       'React-based product architecture',
       'SEO-oriented workflow support',
       'Developer-focused UI',
-      '[EDIT — add confirmed features]',
     ],
   },
   {
@@ -47,105 +118,33 @@ export const projects = [
     featured: true,
     category: 'SEO',
     categories: ['SEO', 'React'],
-    year: '2024–Present',
+    year: '2026–Present',
     status: 'Live',
     overview:
-      'Cookieshift is a cookie consent management platform. Development and SEO-related contributions supported the product and its workflows.',
+      'Cookieshift is a cookie consent management platform that helps websites scan and categorize cookies, customize consent banners, and manage consent records. I contributed development and SEO-related work to the product.',
     problem:
       'Websites need clear, maintainable consent experiences and related tooling without heavy operational overhead.',
     contribution:
-      '[EDIT — describe your exact personal contribution, modules, or integrations. Do not claim sole ownership of the platform.]',
-    implementation:
-      '[EDIT — technical architecture and modules you worked on.]',
-    decisions:
-      '[EDIT — key technical or product decisions you influenced.]',
-    challenges:
-      '[EDIT — challenges solved during development or SEO work.]',
-    outcome:
-      '[EDIT — verified outcomes only. Do not invent metrics.]',
-    stack: ['[EDIT — confirm stack]'],
+      'Development and SEO-related contributions supporting the product and its workflows.',
+    implementation: null,
+    decisions: null,
+    challenges: null,
+    outcome: null,
+    stack: [],
     liveUrl: 'https://cookieshift.com/',
     repoUrl: null,
     image: null,
     highlights: [
-      'Cookie consent platform',
-      'Live product',
-      '[EDIT — add confirmed contribution highlights]',
-    ],
-  },
-  {
-    id: 'zozo-portfolio',
-    title: 'Zozo Portfolio',
-    tagline: 'WordPress portfolio plugin',
-    featured: true,
-    category: 'WordPress',
-    categories: ['WordPress'],
-    year: '2023–Present',
-    status: 'Published on WordPress.org',
-    overview:
-      'A WordPress plugin for displaying portfolio items and related content, built for the ZozoThemes ecosystem and published on WordPress.org.',
-    problem:
-      'Themes and sites needed a flexible, maintainable way to present portfolio work with custom post types and frontend display options.',
-    contribution:
-      'Created and maintained the plugin — custom post types, settings, display logic, and integration with theme and Elementor workflows where applicable.',
-    implementation:
-      'WordPress plugin architecture with custom post types, metadata, admin settings, and frontend presentation for themes.',
-    decisions:
-      'Kept the plugin focused on portfolio presentation and configuration rather than overloading it with unrelated features.',
-    challenges:
-      'Ensuring compatibility across multiple themes and Elementor setups while keeping the admin experience clear.',
-    outcome:
-      'Published on WordPress.org and used across ZozoThemes product demos and related sites.',
-    stack: ['PHP', 'WordPress', 'JavaScript', 'CSS', 'Custom Post Types'],
-    liveUrl: 'https://wordpress.org/plugins/zozo-portfolio/',
-    repoUrl: null,
-    image: null,
-    highlights: [
-      'Published on WordPress.org',
-      'Custom post type for portfolio items',
-      'Admin settings and configuration',
-      'Theme and Elementor integration',
-    ],
-  },
-  {
-    id: 'zozo-nest',
-    title: 'Zozo Nest',
-    tagline: 'Real-estate WordPress plugin',
-    featured: true,
-    category: 'WordPress',
-    categories: ['WordPress'],
-    year: '2023–Present',
-    status: 'Published on WordPress.org',
-    overview:
-      'A real-estate-oriented WordPress plugin for listing and presenting property-related content within the ZozoThemes ecosystem.',
-    problem:
-      'Real-estate sites needed structured content types and display patterns beyond generic posts.',
-    contribution:
-      '[EDIT — confirm exact personal contribution to Zozo Nest.] Built and maintained plugin functionality for real-estate content modeling and frontend presentation.',
-    implementation:
-      'Custom post types, metadata, admin options, and frontend templates or widgets as implemented for the product.',
-    decisions:
-      'Structured data and admin UX around real-estate content needs rather than forcing a generic CPT into an unsuitable shape.',
-    challenges:
-      'Balancing flexibility for different theme layouts with a coherent default experience.',
-    outcome:
-      'Part of the ZozoThemes plugin set supporting real-estate theme use cases; available on WordPress.org.',
-    stack: ['PHP', 'WordPress', 'JavaScript', 'CSS', 'Custom Post Types'],
-    liveUrl: 'https://wordpress.org/plugins/zozonest',
-    repoUrl: null,
-    image: null,
-    highlights: [
-      'Published on WordPress.org',
-      'Real-estate content modeling',
-      'Admin configuration',
-      'Theme integration',
+      'Cookie scanning and consent banner customization',
+      'Consent logs and cookie blocking',
+      'Integrations for WordPress and Joomla',
     ],
   },
   {
     id: 'theme-maintenance',
     title: 'ZozoThemes Catalog Maintenance',
     tagline: '140+ themes — updates, bugs, reliability',
-    featured: true,
+    featured: false,
     category: 'WordPress',
     categories: ['WordPress'],
     year: '2023–Present',
@@ -176,44 +175,10 @@ export const projects = [
     ],
   },
   {
-    id: 'schema-booster',
-    title: 'Schema Booster',
-    tagline: 'Structured data / schema plugin work',
-    featured: true,
-    category: 'SEO',
-    categories: ['WordPress', 'SEO'],
-    year: '2023–Present',
-    status: 'Product / SEO tooling',
-    overview:
-      'Schema and structured-data related development to help sites expose clearer machine-readable information for search engines.',
-    problem:
-      'Many WordPress sites ship incomplete or inconsistent structured data, which limits how search engines understand content.',
-    contribution:
-      '[EDIT — exact personal contribution.] Worked on schema-related plugin development and integration with theme and content structures.',
-    implementation:
-      '[EDIT — confirm schema types, configuration UI, and output approach.]',
-    decisions:
-      'Focused on practical, maintainable schema coverage for common content types rather than every possible schema type.',
-    challenges:
-      'Keeping markup valid and up to date as content models and SEO guidance evolve.',
-    outcome:
-      '[EDIT — confirmed outcome only.]',
-    stack: ['PHP', 'WordPress', 'JSON-LD / Schema.org concepts', 'SEO'],
-    liveUrl: null, // [EDIT — add public URL when confirmed]
-    repoUrl: null,
-    image: null,
-    highlights: [
-      'Structured data generation',
-      'Content-type aware schema',
-      'SEO-oriented configuration',
-      '[EDIT — list confirmed schema types]',
-    ],
-  },
-  {
     id: 'elementor-addons',
     title: 'Custom Elementor Addons & Widgets',
     tagline: 'Reusable Elementor building blocks',
-    featured: true,
+    featured: false,
     category: 'WordPress',
     categories: ['WordPress'],
     year: '2023–Present',
@@ -241,40 +206,6 @@ export const projects = [
       'Portfolio carousels',
       'CPT integrations',
       'Theme settings integration',
-    ],
-  },
-  {
-    id: 'office-automation',
-    title: 'Office Automation Workflows',
-    tagline: 'Reducing repetitive internal work',
-    featured: false,
-    category: 'Automation',
-    categories: ['Automation'],
-    year: '2023–Present',
-    status: 'Internal',
-    overview:
-      'Internal automation projects aimed at reducing repetitive manual work, improving consistency, and making routine office and development-adjacent processes easier to manage.',
-    problem:
-      'Repetitive manual steps slow teams down and introduce inconsistency. Automation was needed for selected internal workflows.',
-    contribution:
-      'Designed and implemented automation that replaced or simplified manual processes.',
-    implementation:
-      '[EDIT — describe tools, languages, and systems used once confirmed. Do not invent stack details.]',
-    decisions:
-      'Target high-friction, high-frequency tasks first so the automation delivered clear day-to-day value.',
-    challenges:
-      'Understanding real workflows well enough that automation matched how people actually work.',
-    outcome:
-      '[EDIT — qualitative outcome only unless you have verified metrics.]',
-    stack: ['[EDIT — tools used]'],
-    liveUrl: null,
-    repoUrl: null,
-    image: null,
-    highlights: [
-      'Workflow streamlining',
-      'Consistency improvements',
-      'Reduced repetitive work',
-      '[EDIT — specific processes]',
     ],
   },
   {
@@ -309,6 +240,81 @@ export const projects = [
       'Bug fixes & compatibility',
       'Customization requests',
       'Technical support',
+    ],
+  },
+  {
+    id: 'office-automation',
+    title: 'Office Automation Workflows',
+    tagline: 'Reducing repetitive internal work',
+    featured: false,
+    category: 'Automation',
+    categories: ['Automation'],
+    year: '2023–Present',
+    status: 'Internal',
+    overview:
+      'Internal automation projects aimed at reducing repetitive manual work, improving consistency, and making routine office and development-adjacent processes easier to manage.',
+    problem:
+      'Repetitive manual steps slow teams down and introduce inconsistency. Automation was needed for selected internal workflows.',
+    contribution:
+      'Designed and implemented automation that replaced or simplified manual processes.',
+    implementation: null,
+    decisions:
+      'Target high-friction, high-frequency tasks first so the automation delivered clear day-to-day value.',
+    challenges:
+      'Understanding real workflows well enough that automation matched how people actually work.',
+    outcome: null,
+    stack: [],
+    liveUrl: null,
+    repoUrl: null,
+    image: null,
+    highlights: [
+      'Workflow streamlining',
+      'Consistency improvements',
+      'Reduced repetitive work',
+    ],
+  },
+]
+
+/**
+ * Parked projects — NOT shown on the site.
+ * Schema Booster has no public page I could verify, so it is kept here until
+ * you have a public URL and your exact contribution. To publish it later,
+ * fill in every field below, delete the "[EDIT …]" text, and move the object
+ * into the `projects` array above.
+ */
+export const draftProjects = [
+  {
+    id: 'schema-booster',
+    title: 'Schema Booster',
+    tagline: 'Structured data / schema plugin work',
+    featured: true,
+    category: 'SEO',
+    categories: ['WordPress', 'SEO'],
+    year: '2023–Present',
+    status: 'Product / SEO tooling',
+    overview:
+      'Schema and structured-data related development to help sites expose clearer machine-readable information for search engines.',
+    problem:
+      'Many WordPress sites ship incomplete or inconsistent structured data, which limits how search engines understand content.',
+    contribution:
+      '[EDIT — exact personal contribution.] Worked on schema-related plugin development and integration with theme and content structures.',
+    implementation:
+      '[EDIT — confirm schema types, configuration UI, and output approach.]',
+    decisions:
+      'Focused on practical, maintainable schema coverage for common content types rather than every possible schema type.',
+    challenges:
+      'Keeping markup valid and up to date as content models and SEO guidance evolve.',
+    outcome:
+      '[EDIT — confirmed outcome only.]',
+    stack: ['PHP', 'WordPress', 'JSON-LD / Schema.org concepts', 'SEO'],
+    liveUrl: null, // [EDIT — add public URL when confirmed]
+    repoUrl: null,
+    image: null,
+    highlights: [
+      'Structured data generation',
+      'Content-type aware schema',
+      'SEO-oriented configuration',
+      '[EDIT — list confirmed schema types]',
     ],
   },
 ]
